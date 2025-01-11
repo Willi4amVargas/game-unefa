@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://2fc62gsq44bp"]
+
+[ext_resource type="Script" path="res://player/BulletProperties.gd" id="1_t8hva"]
+[ext_resource type="Texture2D" uid="uid://6xmjmkvurmvh" path="res://assets/kenney_alien-ufo-pack/PNG/laserBeige3.png" id="2_uukny"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7kjrw"]
+radius = 12.0
+height = 90.0
+
+[node name="Bullet" type="CharacterBody2D"]
+script = ExtResource("1_t8hva")
+
+[node name="LaserBeige3" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_uukny")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_7kjrw")

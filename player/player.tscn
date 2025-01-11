@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bchky54i5jrqr"]
+
+[ext_resource type="Script" path="res://player/PlayerPropierties.gd" id="1_uq42m"]
+[ext_resource type="Texture2D" uid="uid://dfpsb8033adu1" path="res://assets/kenney_alien-ufo-pack/PNG/shipYellow_manned.png" id="2_n8vr8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyll7"]
+radius = 50.0
+height = 134.0
+
+[node name="Player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-4, 2)
+script = ExtResource("1_uq42m")
+
+[node name="ShipYellowManned" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_n8vr8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_kyll7")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 3.0
+
+[node name="Node2D" type="Node2D" parent="CharacterBody2D"]
+position = Vector2(4, -2)
